@@ -381,3 +381,9 @@ body.light-theme .achievement-card p,
 body.light-theme .achievement-card span,
 body.light-theme .float-card small { color:#58677e; }
 body.light-theme .admin-note { background:#eff6ff; border-color:#3b82f6; }
+
+/* FelixForge Academy brand and responsive logo */
+.brand-logo{display:block;width:42px;height:42px;flex:0 0 42px;border-radius:12px}
+.mobile-brand{align-items:center;gap:9px;text-decoration:none;font:700 15px 'Space Grotesk';color:var(--text)}
+.mobile-brand img{display:block;width:32px;height:32px;border-radius:9px}
+@media(max-width:900px){.mobile-brand{display:flex}}
