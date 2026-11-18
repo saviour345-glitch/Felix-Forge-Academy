@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}{{ course.title }} Practice — FelixForge Academy{% endblock %}
+{% block content %}
+<a class="back-link" href="{{ url_for('course_detail',slug=course.slug) }}">← {{ course.title }}</a>
+<div class="page-heading practice-heading"><div><div class="eyebrow">BUILD YOUR SKILLS · {{ course.language|upper }}</div><h1>Exercises & projects</h1><p>Work through the exercises in order, then build the portfolio projects. Try each task before opening its hints.</p></div><a class="button button-ghost" href="{{ url_for('editor') }}">Open code editor ↗</a></div>
+<section class="practice-intro"><b>How to get the most from practice</b><ol><li>Read the requirements and write down the expected behaviour.</li><li>Plan the solution before coding.</li><li>Build a small working version, then improve it.</li><li>Test normal inputs, boundary values and invalid inputs.</li><li>Explain your decisions in a short README.</li></ol></section>
+<div class="practice-section-title"><div class="eyebrow">SKILL-BUILDING TASKS</div><h2>Guided coding exercises</h2><p>Each exercise includes a clear goal, implementation guidance and checks you can use to test your work.</p></div>
+<div class="practice-grid">
+{% for item in exercises %}
+<article class="practice-card"><div class="practice-card-top"><span class="practice-number">EXERCISE {{ '%02d'|format(loop.index) }}</span><span class="level-tag">{{ 'Core' if loop.index == 1 else ('Applied' if loop.index == 2 else 'Challenge') }}</span></div><h3>{{ item[0] }}</h3><p>{{ item[1] }}</p><details><summary>Hints and implementation guidance</summary><p>{{ item[2] }}</p></details><details><summary>Test your solution</summary><p>{{ item[3] }}</p></details><a class="button button-ghost" href="{{ url_for('editor') }}">Practise in editor →</a></article>
+{% endfor %}
+</div>
+<div class="practice-section-title"><div class="eyebrow">PORTFOLIO BUILDERS</div><h2>Practical projects</h2><p>These projects are designed to combine multiple concepts and produce work you can demonstrate.</p></div>
+<div class="project-brief-grid">
+{% for project in projects %}
+<article class="project-brief"><div class="eyebrow">PROJECT {{ '%02d'|format(loop.index) }}</div><h3>{{ project[0] }}</h3><p>{{ project[1] }}</p><h4>Requirements</h4><p>{{ project[2] }}</p><h4>Suggested build process</h4><ol><li>Break the requirements into small features.</li><li>Build and test one feature at a time.</li><li>Refactor repeated logic into reusable functions or components.</li><li>Test edge cases and document how to run the project.</li></ol><div class="practice-actions"><a class="button" href="{{ url_for('editor') }}">Start building →</a><a class="button button-ghost" href="{{ url_for('submit_project',slug=course.slug) }}">Add finished work to portfolio</a></div></article>
+{% endfor %}
+</div>
+<section class="exam-callout"><div><div class="eyebrow">READY TO CHECK YOUR KNOWLEDGE?</div><h2>Take the final examination</h2><p>Return to the course page to complete the lesson-by-lesson final examination and review your explanations.</p></div><a class="button" href="{{ url_for('course_detail',slug=course.slug) }}#course-exam">Go to examination →</a></section>
+{% endblock %}

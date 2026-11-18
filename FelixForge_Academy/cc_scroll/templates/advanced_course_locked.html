@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block title %}{{ course.title }} — FelixForge Academy{% endblock %}
+{% block content %}
+<a class="back-link" href="{{ url_for('advanced_courses') }}">← Back to advanced courses</a>
+<section class="locked-course-hero"><div class="eyebrow">ADVANCED COURSE PREVIEW</div><div class="locked-course-label">🔒 PREMIUM COURSE</div><h1>{{ course.title }}</h1><p>{{ course.description }}</p><div class="advanced-card-meta"><span>{{ course.language }}</span><span>{{ course.level }}</span><span>{{ course.lessons|length }} lessons</span></div></section>
+<section class="locked-content-panel"><div class="locked-content-icon">✦</div><div><div class="eyebrow">UNLOCK THE FULL LEARNING PATH</div><h2>Premium access required</h2><p>Course descriptions are available to all signed-in learners. Lesson explanations, code examples, practice materials and assessments are reserved for users with an active monthly or annual Premium membership and the FelixForge Academy administrator.</p><div class="locked-benefits"><span>✓ Full lesson content</span><span>✓ Practical code examples</span><span>✓ Progress tracking</span><span>✓ Course practice and assessments</span></div><div class="locked-prices"><div><small>MONTHLY PREMIUM</small><b>₦{{ "{:,.0f}".format(monthly_fee) }}</b></div><div><small>ANNUAL PREMIUM</small><b>₦{{ "{:,.0f}".format(annual_fee) }}</b></div></div><a class="button" href="{{ url_for('monetization_plan') }}">Explore Premium plans →</a></div></section>
+{% endblock %}

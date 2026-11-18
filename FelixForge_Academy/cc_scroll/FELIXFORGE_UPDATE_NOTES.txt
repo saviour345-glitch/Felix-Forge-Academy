@@ -1,0 +1,25 @@
+FELIXFORGE ACADEMY UPDATE
+=================
+
+This update includes the FelixForge Academy rebrand, a redesigned light theme, styled Advanced Courses pages, six additional premium course tracks, and server-side Premium access checks.
+
+IMPORTANT DATABASE NOTE
+- Back up codecraft.db before updating.
+- Keep your existing .env file and codecraft.db file.
+- Do not replace your database with a blank one.
+- The app adds the Course.access_level column automatically if it is missing; existing courses default to free.
+- Existing accounts, progress, bookmarks, notes and payment records are retained when you keep the existing database.
+
+PREMIUM ACCESS
+- Advanced lesson content is available only when a user has a verified monthly or annual payment with status=paid, a valid starts_at, and an ends_at timestamp in the future.
+- The configured administrator can access all advanced lessons without a Premium payment.
+- Free users can see course descriptions and the Premium prompt, but lesson pages, practice, quizzes, notes, bookmarks and completion actions are protected on the server.
+- Paystack verification remains server-side. Do not place the Paystack secret key in templates or browser JavaScript.
+
+BRANDING
+- Website name: FelixForge Academy
+- Main motto: From Zero to Developer
+- Supporting line: Learn coding at your own pace.
+- Retained phrases: Turn curiosity into real-world code; Your next chapter starts here.
+
+After copying the updated files, restart the Flask application. If deploying publicly, retain the same SECRET_KEY and DATABASE_URL and use HTTPS.

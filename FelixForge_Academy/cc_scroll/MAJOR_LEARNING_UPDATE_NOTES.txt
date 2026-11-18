@@ -1,0 +1,15 @@
+FelixForge Academy – Major Learning Experience Update
+
+Included:
+- Final course exams are rebuilt from the current lesson database after seeding. Every lesson contributes a lesson-specific concept question and a code-reading question using an exact line from that lesson's worked example where a code line is available.
+- Answer choices are shuffled deterministically when the exam bank is built; exam questions are shuffled for each attempt in the browser. Explanations are shown after submission.
+- The exam timer scales with the question count (at least 45 minutes, with 75 seconds per question).
+- Lessons now include a plain-language glossary of relevant basic terms.
+- Each language lesson includes local-computer setup and run commands, separate from the website editor/codespace.
+- Lessons include a Complete & next lesson button. It saves completion before opening the next lesson; the final lesson links directly to the final examination.
+- Certificates have a redesigned formal layout. Print CSS isolates the certificate so the name form, navigation, buttons and rest of the page are not printed.
+
+Safety/data notes:
+- Existing user, progress, notes, bookmarks, payments and quiz-result records are not deleted by the exam-bank refresh. QuizQuestion rows are regenerated from lesson content; QuizResult records remain intact.
+- No .env or database file is included in the ZIP. Preserve the existing .env and codecraft.db files when replacing the project.
+- Review platform-specific compiler installation instructions and official download sources before following them. The commands are provided as a starting point and may differ with local installation paths.

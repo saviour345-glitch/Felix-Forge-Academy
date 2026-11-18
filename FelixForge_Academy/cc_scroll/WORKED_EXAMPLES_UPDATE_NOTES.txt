@@ -1,0 +1,7 @@
+FELIXFORGE ACADEMY — WORKED EXAMPLES UPDATE
+
+This update restores a fuller worked-example section. Foundation lessons now show up to four additional examples, while established lessons show up to five when the course example bank has enough entries. Examples follow the course's curated progression from introductory patterns toward more involved patterns. The example most closely matched to the lesson is retained, alongside simpler examples that build toward it. Each example retains its explanation, code, expected behaviour, line-by-line walkthrough, and editor link. The lesson's main worked example remains in place.
+
+The change is additive and does not alter learner accounts, progress, bookmarks, notes, payments, or the database schema. Preserve your existing .env and codecraft.db when installing.
+
+Validation performed: Python syntax compilation for the modified worked_examples.py; ZIP archive integrity check. A full live Flask/browser test was not performed.
